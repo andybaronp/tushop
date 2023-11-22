@@ -41,7 +41,6 @@ const Header = () => {
 
           {/* <!-- Register Button --> */}
           <button
-            data-collapse-toggle='navbar-sticky'
             type='button'
             className='inline-flex items-center p-2 text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 md:hidden'
             aria-controls='navbar-sticky'
@@ -63,10 +62,7 @@ const Header = () => {
             </svg>
           </button>
         </div>
-        <div
-          className='items-center justify-between hidden w-full md:order-1 md:flex md:w-auto'
-          id='navbar-sticky'
-        >
+        <div className='items-center justify-between hidden w-full md:order-1 md:flex md:w-auto'>
           <ul className='flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:mt-0 md:flex-row md:space-x-8 md:border-0 md:bg-white md:text-sm md:font-medium'>
             <li>
               <Link
