@@ -27,7 +27,7 @@ const Header = () => {
           </svg>
 
           <span className='self-center ml-2 text-xl font-semibold whitespace-nowrap'>
-            Tu SHop
+            Tu Shop
           </span>
         </Link>
         <div className='mt-2 sm:mt-0 sm:flex md:order-2'>
