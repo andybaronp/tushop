@@ -1,4 +1,4 @@
-const Rating = ({ rating = 0 }: { rating: number }) => {
+const Rating = ({ rating = 0 }) => {
   return (
     <div className='absolute inline-flex items-center p-2 bg-white rounded-lg shadow-md bottom-1 right-2 '>
       <svg

@@ -42,18 +42,17 @@ const ProductDetails = () => {
             <div className=''>
               <p>
                 Precio con descuento{' '}
-                {(
-                  first?.price -
-                  first?.price * (first?.discountPercentage / 100)
-                ).toLocaleString('en-US', {
-                  style: 'currency',
-                  currency: 'USD',
-                })}{' '}
-                {first?.discountPercentage > 0 && (
-                  <span className='inline-block px-3 py-1 mr-2 text-sm font-semibold text-red-500 bg-yellow-100 rounded-full'>
-                    {first?.discountPercentage}% OFF
-                  </span>
-                )}
+                {first?.price &&
+                  (
+                    first?.price -
+                    first?.price * (first?.discountPercentage / 100)
+                  ).toLocaleString('en-US', {
+                    style: 'currency',
+                    currency: 'USD',
+                  })}{' '}
+                <span className='inline-block px-3 py-1 mr-2 text-sm font-semibold text-red-500 bg-yellow-100 rounded-full'>
+                  {first?.discountPercentage}% OFF
+                </span>
               </p>
             </div>
             <div>
