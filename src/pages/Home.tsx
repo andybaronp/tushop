@@ -1,25 +1,8 @@
 import Main from '../components/Main'
-import { getProduct } from '../apis/getProducts'
-import ProductCard from '../components/ProductCard'
 import Search from '../components/Search'
-import { useState, useEffect } from 'react'
-import { ProductElement } from '../interfaces/product'
+import SomeProducts from '../components/SomeProducts'
 
-const randoSkip = Math.floor(Math.random() * 95)
 const Home = () => {
-  const [first, setfirst] = useState<ProductElement[] | null>(null)
-
-  const getProductById = async () => {
-    const { data } = await getProduct(
-      `${import.meta.env.VITE_API_URL}/products?limit=8&skip=${randoSkip}`,
-    )
-    setfirst(data.products)
-  }
-  useEffect(() => {
-    getProductById()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
-
   return (
     <div className='bg-white'>
       {/* <!-- Title --> */}
@@ -114,19 +97,7 @@ const Home = () => {
       <Main />
 
       {/* <!-- Product List --> */}
-      <section className='py-10 bg-gray-50'>
-        <div className='mt-16'>
-          <h3 className='mb-3 text-2xl font-medium text-gray-00'>
-            Más artículos por considerar
-          </h3>
-          <div className='grid max-w-6xl grid-cols-1 gap-6 p-6 mx-auto sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
-            {first &&
-              first.map((product: ProductElement) => {
-                return <ProductCard key={product.id} {...product} />
-              })}
-          </div>
-        </div>
-      </section>
+      <SomeProducts />
     </div>
   )
 }

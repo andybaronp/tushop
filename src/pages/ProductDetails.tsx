@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react'
-import ProductCard from '../components/ProductCard'
 import { ProductElement } from '../interfaces/product'
 import { getProduct } from '../apis/getProducts'
 import { useParams } from 'react-router-dom'
+import SomeProducts from '../components/SomeProducts'
 
 const ProductDetails = () => {
   const { id } = useParams()
+  const [imageThumbnail, setImageThumbnail] = useState('')
   const [first, setfirst] = useState<ProductElement | null>(null)
   const getProductById = async () => {
     const { data } = await getProduct(
@@ -18,39 +19,70 @@ const ProductDetails = () => {
     getProductById()
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
-  console.log(first)
-  const [imageThumbnail, setImageThumbnail] = useState<string>('')
+
   return (
-    <section className='p-11 '>
-      <h1 className='py-5 text-3xl'> {first?.title}</h1>
-      <div className='flex flex-wrap justify-center'>
-        <div className='grid gap-4'>
-          <div className='p-4 bg-black'>
-            <img
-              className='object-contain rounded-lg h-96 '
-              src={imageThumbnail}
-              alt=''
-            />
+    <div className='py-8 mb-2 md:py-12 '>
+      <section className='flex flex-col w-full mb-8 '>
+        <div className='p-2'>
+          <h1 className='text-xl md:text-3xl '> {first?.title}</h1>
+        </div>
+        <div className='flex flex-col justify-between bg-gray-50 md:flex-row'>
+          {/* Details */}
+
+          <div className='bg-red-500 border  border-e-gray-200 h-80'>
+            <div className='w-full'>
+              <h2>{first?.title}</h2>
+              <p>
+                {first?.price.toLocaleString('pt-br', {
+                  style: 'currency',
+                  currency: 'BRL',
+                })}{' '}
+                <span className='px-1 text-[10px] text-red-500 bg-yellow-100 rounded'>
+                  {first?.discountPercentage}% Off
+                </span>
+              </p>
+
+              <p>{first?.rating}</p>
+              <p>{first?.category}</p>
+              <p>{first?.brand}</p>
+              <p></p>
+              <p>{first?.stock}</p>
+
+              <p>{first?.description}</p>
+            </div>
           </div>
-          <div className='grid grid-cols-5 gap-4 '>
-            {first?.images.map((image) => (
-              <div
-                key={image}
-                onClick={() => setImageThumbnail(image)}
-                className='p-2 bg-gray-200 rounded-lg cursor-pointer'
-              >
-                <img
-                  className='w-32 h-32 rounded-lg '
-                  src={image}
-                  alt={first?.title}
-                />
+
+          {/* Images */}
+          <div className='grid gap-4 justify-items-center '>
+            <div className='bg-white w-80 md:w-auto md:max-w-lg'>
+              <img
+                className='object-contain mx-auto rounded-lg md:h-96 md:w-full'
+                src={imageThumbnail}
+                alt=''
+              />
+            </div>
+            <div className='px-2 overflow-x-auto md:overflow-hidden'>
+              <div className={`grid grid-cols-5 gap-4    whitespace-no-wrap`}>
+                {first?.images.map((image) => (
+                  <div
+                    key={image}
+                    onClick={() => setImageThumbnail(image)}
+                    className='px-2 pb-2 bg-red-200 rounded-lg cursor-pointer'
+                  >
+                    <img
+                      className='object-cover w-32 h-32 '
+                      src={image}
+                      alt={first?.title}
+                    />
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
           </div>
         </div>
-      </div>
-      {/* <ProductCard {...first} /> */}
-    </section>
+      </section>
+      <SomeProducts />
+    </div>
   )
 }
 
