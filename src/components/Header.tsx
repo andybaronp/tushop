@@ -6,22 +6,28 @@ const Header = () => {
       <div className='container flex flex-wrap items-center justify-between max-w-6xl mx-auto'>
         <Link to='/' className='flex items-center'>
           <svg
-            xmlns='http://www.w3.org/2000/svg'
-            fill='none'
-            viewBox='0 0 24 24'
+            width='24px'
+            height='24px'
             strokeWidth='1.5'
-            stroke='currentColor'
-            className='h-6 mr-3 text-blue-500 sm:h-9'
+            viewBox='0 0 24 24'
+            fill='none'
+            xmlns='http://www.w3.org/2000/svg'
+            color='#000000'
           >
             <path
-              strokeLinecap='round'
-              strokeLinejoin='round'
-              d='M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9'
-            />
+              d='M2.76923 13L2.13717 9.71331C2.06601 9.34327 2.34956 9 2.72638 9H21.2736C21.6504 9 21.934 9.34327 21.8628 9.71331L21.2308 13M2.76923 13H21.2308M2.76923 13L3.38462 17M21.2308 13L20.6154 17M20.6154 17L20.0783 20.4912C20.0332 20.7839 19.7814 21 19.4852 21H4.51475C4.21861 21 3.96676 20.7839 3.92173 20.4912L3.38462 17M20.6154 17H3.38462'
+              stroke='#000000'
+              strokeWidth='1.5'
+            ></path>
+            <path
+              d='M8 9V5C8 3.89543 8.89543 3 10 3H14C15.1046 3 16 3.89543 16 5V9'
+              stroke='#000000'
+              strokeWidth='1.5'
+            ></path>
           </svg>
 
-          <span className='self-center text-xl font-semibold whitespace-nowrap'>
-            Termcode
+          <span className='self-center ml-2 text-xl font-semibold whitespace-nowrap'>
+            Tu SHop
           </span>
         </Link>
         <div className='mt-2 sm:mt-0 sm:flex md:order-2'>
