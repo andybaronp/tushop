@@ -4,5 +4,6 @@ import Products from './Products'
 import ProductDetails from './ProductDetails'
 import Register from './Register'
 import NotFound from './NotFound'
+import Layout from './Layout'
 
-export { Home, Login, Products, ProductDetails, Register, NotFound }
+export { Home, Login, Products, ProductDetails, Register, NotFound, Layout }

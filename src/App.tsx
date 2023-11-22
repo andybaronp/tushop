@@ -1,24 +1,33 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.css'
 import {
-  Home,
   Login,
   Register,
   ProductDetails,
   Products,
   NotFound,
+  Layout,
+  Home,
 } from './pages'
+import Categories from './pages/Categories'
+import Category from './pages/Category'
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/login' element={<Login />} />
-        <Route path='/register' element={<Register />} />
-        <Route path='/products/:id' element={<ProductDetails />} />
-        <Route path='/products' element={<Products />} />
+        <Route path='/' element={<Layout />}>
+          <Route path='/' element={<Home />} />
+          {/* <Route element={<Home />} /> */}
+          <Route path='/register' element={<Register />} />
+          <Route path='/products' element={<Products />} />
+          <Route path='/products/:id' element={<ProductDetails />} />
+          <Route path='/categories' element={<Categories />} />
+          <Route path='/category/:id' element={<Category />} />
+        </Route>
+
         <Route path='*' element={<NotFound />} />
+        <Route path='/login' element={<Login />} />
       </Routes>
     </BrowserRouter>
   )
