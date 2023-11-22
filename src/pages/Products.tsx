@@ -10,7 +10,6 @@ const Products = () => {
     const { data } = await getProduct(
       `${import.meta.env.VITE_API_URL}/products`,
     )
-    console.log(data.products)
 
     setfirst(data.products)
   }
