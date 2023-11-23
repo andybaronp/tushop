@@ -25,10 +25,9 @@ const ProductDetails = () => {
         <div className='p-2'>
           <h1 className='text-lg md:text-3xl '> {first?.title}</h1>
         </div>
-
         <div className='grid items-center grid-cols-1 gap-2 p-2 bg-gray-50 md:grid-cols-1'>
           {/* Details */}
-          <div className='flex flex-col items-center p-5 '>
+          <div className='flex flex-col items-center '>
             <div className='flex flex-col items-start p-5 overflow-hidden rounded shadow-lg bg-slate-100'>
               <h1 className='mb-3 text-lg font-bold text-gray-700'>
                 {first?.title}
