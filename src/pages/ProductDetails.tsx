@@ -5,6 +5,7 @@ import Rating from '../components/Rating'
 import SomeReviews from '../components/SomeReviews'
 import { useFetch } from '../hooks/getData'
 import { ProductElement } from '../interfaces/product'
+import { formatPrice } from '../utils/helpers'
 
 const ProductDetails = () => {
   const { id } = useParams()
@@ -34,23 +35,17 @@ const ProductDetails = () => {
                   {data?.title}
                 </h1>
                 <p className='text-base font-bold text-gray-600 '>
-                  {data?.price &&
-                    (
+                  {formatPrice(
+                    data?.price &&
                       data?.price -
-                      data?.price * (data?.discountPercentage / 100)
-                    ).toLocaleString('en-US', {
-                      style: 'currency',
-                      currency: 'USD',
-                    })}
+                        data?.price * (data?.discountPercentage / 100),
+                  )}
                   <span className='inline-block px-2 py-1 ml-2 text-sm text-red-500 bg-yellow-100 rounded-full'>
                     {data?.discountPercentage}% OFF
                   </span>
                 </p>
                 <p className='text-sm font-bold text-gray-300 line-through '>
-                  {data?.price.toLocaleString('en-US', {
-                    style: 'currency',
-                    currency: 'USD',
-                  })}
+                  {formatPrice(data?.price)}
                 </p>
                 <div className='mt-4'>
                   <div className=''>

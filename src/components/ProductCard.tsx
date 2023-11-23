@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { ProductElement } from '../interfaces/product'
 import Rating from './Rating'
+import { formatPrice } from '../utils/helpers'
 
 const ProductCard: React.FC<ProductElement> = ({
   title,
@@ -28,10 +29,7 @@ const ProductCard: React.FC<ProductElement> = ({
           </p>
           <div className='flex items-end justify-between mt-3'>
             <p className='text-lg font-bold text-blue-500'>
-              {price.toLocaleString('en-US', {
-                style: 'currency',
-                currency: 'USD',
-              })}
+              {formatPrice(price)}
             </p>
           </div>
         </div>
