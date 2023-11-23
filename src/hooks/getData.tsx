@@ -19,7 +19,7 @@ export const useFetch = <T,>(url: string) => {
     setState({ data: null, loading: true, error: null })
 
     axios
-      .get(`${base_url}${url}`)
+      .get(`${import.meta.env.VITE_BASE_URL}${url}`)
       .then((resp) => resp.data)
       .then((data) => {
         setState({
