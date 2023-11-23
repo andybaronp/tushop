@@ -11,6 +11,7 @@ import {
 } from './pages'
 import Categories from './pages/Categories'
 import Category from './pages/Category'
+import Favorites from './pages/Favorites'
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path='/products/:id' element={<ProductDetails />} />
           <Route path='/categories' element={<Categories />} />
           <Route path='/category/:id' element={<Category />} />
+          <Route path='/favorites' element={<Favorites />} />
         </Route>
 
         <Route path='*' element={<NotFound />} />

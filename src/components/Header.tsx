@@ -74,7 +74,7 @@ const Header = () => {
           } w-full md:order-1 md:flex md:w-auto`}
         >
           <ul
-            className='flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:mt-0 md:flex-row md:space-x-8 md:border-0 md:bg-white md:text-sm md:font-medium'
+            className='flex flex-col p-4 mt-4 bg-gray-100 border border-gray-100 rounded-lg md:mt-0 md:flex-row md:space-x-8 md:border-0 md:bg-white md:text-sm md:font-medium'
             onClick={() => setShowMenu(false)}
           >
             <li>
@@ -103,12 +103,12 @@ const Header = () => {
               </Link>
             </li>
             <li>
-              <a
-                href='#'
+              <Link
+                to='/favorites'
                 className='block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-blue-700'
               >
                 Favoritos
-              </a>
+              </Link>
             </li>
             <li className='md:hidden'>
               <button

@@ -11,7 +11,7 @@ const ProductCard: React.FC<ProductElement> = ({
   id,
 }) => {
   return (
-    <article className='max-w-xs p-3 duration-300 bg-white shadow-lg rounded-xl hover:shadow-xl'>
+    <article className='max-w-xs p-3 duration-300 shadow-lg bg-slate-100 rounded-xl hover:shadow-xl hover:bg-white'>
       <Link to={`/products/${id}`}>
         <div className='relative flex items-end overflow-hidden rounded-xl'>
           <img

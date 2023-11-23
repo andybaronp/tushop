@@ -1,24 +1,44 @@
 import { Link } from 'react-router-dom'
 import { Category } from '../interfaces/product'
 
-const CategoryCard = ({ category, name, description }: Category) => {
-  return (
-    <div className='w-64 h-56 overflow-hidden bg-center bg-cover rounded-md '>
-      <div className='flex flex-col items-center justify-between h-full px-3 py-4 bg-gray-700 bg-opacity-50'>
-        <h2 className='text-2xl font-semibold text-white'>{name}</h2>
-        <p className='text-gray-100 '>{description}</p>
+const CategoryCard = ({ category, name, description, thumbnail }: Category) => {
+  console.log(thumbnail)
 
-        <div className='flex items-center w-32 px-3 py-2 mt-4 text-sm font-medium text-white uppercase bg-blue-600 rounded hover:bg-blue-500 focus:outline-none focus:bg-blue-500'>
-          <Link to={`/category/${category}`}>
-            <span>Ver ahora ⟶</span>
-          </Link>
-        </div>
+  return (
+    <Link
+      to={`/category/${category}`}
+      className='flex flex-col items-center w-full bg-gray-100 border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-200'
+    >
+      <img
+        className='object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg'
+        src={thumbnail}
+        alt=''
+      />
+      <div className='flex flex-col justify-between p-4 leading-normal'>
+        <h5 className='mb-2 text-2xl font-bold tracking-tight text-gray-700 '>
+          {name}
+        </h5>
+        <p className='mb-3 font-normal text-gray-700 '>{description}</p>
       </div>
-    </div>
+    </Link>
+    // <div className='flex flex-col w-full max-w-full px-4 mb-8 transition cursor-pointer sm:w-1/2 lg:w-1/3 hover:scale-105 '>
+    //   <Link to={`/category/${category}`}>
+    //     <img
+    //       src={thumbnail}
+    //       alt='Card img'
+    //       className='object-cover object-center w-full h-48'
+    //     />
+    //     <div className='flex flex-grow'>
+    //       <div className='flex flex-col justify-between w-full px-4 py-6 bg-white border border-gray-200 text'>
+    //         <div>
+    //           <p className='block mb-4 text-2xl leading-tight '>{name}</p>
+    //           <p className='mb-4'>{description}</p>
+    //         </div>
+    //       </div>
+    //     </div>
+    //   </Link>
+    // </div>
   )
-}
-{
-  /* md:mt-0 md:w-1/2 w-full mt-8 */
 }
 
 export default CategoryCard

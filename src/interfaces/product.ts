@@ -23,6 +23,7 @@ export interface Category {
   category: string
   description: string
   name: string
+  thumbnail?: string
 }
 
 export interface ProductReview {

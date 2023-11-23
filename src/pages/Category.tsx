@@ -19,8 +19,8 @@ const Category = () => {
 
   return (
     <div>
-      <section className='py-10 mb-4 bg-gray-50'>
-        <div className='grid max-w-6xl grid-cols-1 gap-6 p-6 mx-auto mt-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
+      <section className='px-2 py-10 mb-4 bg-gray-50'>
+        <div className='grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
           {first &&
             first.map((product: ProductElement) => {
               return <ProductCard key={product.id} {...product} />
