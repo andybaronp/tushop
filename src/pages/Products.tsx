@@ -1,5 +1,5 @@
 import ProductCard from '../components/ProductCard'
-import { useFetch } from '../hooks/getData'
+import { useFetch } from '../hooks/useFetch'
 import { Product, ProductElement } from '../interfaces/product'
 
 const Products = () => {

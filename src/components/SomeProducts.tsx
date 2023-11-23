@@ -1,6 +1,6 @@
 import { Product, ProductElement } from '../interfaces/product'
 import ProductCard from './ProductCard'
-import { useFetch } from '../hooks/getData'
+import { useFetch } from '../hooks/useFetch'
 const randoSkip = Math.floor(Math.random() * 95)
 
 const SomeProducts = () => {

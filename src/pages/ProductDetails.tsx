@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import SomeProducts from '../components/SomeProducts'
 import Rating from '../components/Rating'
 import SomeReviews from '../components/SomeReviews'
-import { useFetch } from '../hooks/getData'
+import { useFetch } from '../hooks/useFetch'
 import { ProductElement } from '../interfaces/product'
 import { formatPrice } from '../utils/helpers'
 

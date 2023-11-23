@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom'
 import { Product, ProductElement } from '../interfaces/product'
 import ProductCard from '../components/ProductCard'
 import SomeProducts from '../components/SomeProducts'
-import { useFetch } from '../hooks/getData'
+import { useFetch } from '../hooks/useFetch'
 
 const Category = () => {
   const { id } = useParams()
