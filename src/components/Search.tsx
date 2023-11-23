@@ -2,6 +2,7 @@ import { useState, useContext, useEffect } from 'react'
 import { useFetch } from '../hooks/useFetch'
 import { useDebounce } from '../hooks/useDebaunce'
 import { SearchContext } from '../context/SearchContex'
+import { Product } from '../interfaces/product'
 interface Props {
   setIsSearch: (value: boolean) => void
 }
@@ -10,7 +11,7 @@ const Search: React.FC<Props> = ({ setIsSearch }) => {
   const [canFetch, setCantFecht] = useState<boolean>(true)
   const debouncedSearch = useDebounce({ value: first, delay: 1000 })
   const { setDataFetch } = useContext(SearchContext)
-  const { data, loading, error } = useFetch(
+  const { data, loading, error } = useFetch<Product>(
     `/products/search?q=${debouncedSearch}`,
     canFetch,
   )
