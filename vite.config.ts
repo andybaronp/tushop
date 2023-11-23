@@ -3,12 +3,7 @@ import react from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  proxy: {
-    '/api': {
-      target: 'https://dummyjson.com',
-      changeOrigin: true,
-      rewrite: (path) => path.replace(/^\/api/, ''),
-    },
-  },
+  base: 'https://dummyjson.com',
+
   plugins: [react()],
 })
