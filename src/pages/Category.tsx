@@ -8,9 +8,7 @@ const Category = () => {
   const { id } = useParams()
   const [first, setfirst] = useState<ProductElement[] | []>([])
   const getProductById = async () => {
-    const { data } = await getProduct(
-      `${import.meta.env.VITE_API_URL}/products/category/${id} `,
-    )
+    const { data } = await getProduct(`/products/category/${id} `)
     setfirst(data.products)
   }
   useEffect(() => {

@@ -4,44 +4,36 @@ import { getProduct } from '../apis/getProducts'
 import { useParams } from 'react-router-dom'
 import SomeProducts from '../components/SomeProducts'
 import Rating from '../components/Rating'
+import SomeReviews from '../components/SomeReviews'
 
 const ProductDetails = () => {
   const { id } = useParams()
   const [imageThumbnail, setImageThumbnail] = useState('')
   const [first, setfirst] = useState<ProductElement | null>(null)
   const getProductById = async () => {
-    const { data } = await getProduct(
-      `${import.meta.env.VITE_API_URL}/products/${id}`,
-    )
+    const { data } = await getProduct(`/products/${id}`)
     setfirst(data)
     setImageThumbnail(data.thumbnail)
   }
   useEffect(() => {
     getProductById()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id])
 
   return (
     <div className='py-8 mb-2 md:py-12'>
       <section className='flex flex-col w-full mb-8 '>
         <div className='p-2'>
-          <h1 className='text-xl md:text-3xl '> {first?.title}</h1>
+          <h1 className='text-lg md:text-3xl '> {first?.title}</h1>
         </div>
 
-        <div className='grid items-center grid-cols-1 bg-gray-50 md:grid-cols-3'>
+        <div className='grid items-center grid-cols-1 gap-2 p-2 bg-gray-50 md:grid-cols-1'>
           {/* Details */}
-
-          <div className='max-w-sm overflow-hidden bg-white rounded shadow-lg'>
-            <div className=''>
-              <div className='mb-2 text-xl font-bold'>{first?.title}</div>
-              <p className='text-base text-gray-700'>{first?.description}</p>
-            </div>
-            <div className='relative'>
-              <Rating rating={first?.rating} />
-            </div>
-            <div className=''>
-              <p>
-                Precio con descuento{' '}
+          <div className='flex flex-col items-center p-5 '>
+            <div className='flex flex-col items-start p-5 overflow-hidden rounded shadow-lg bg-slate-100'>
+              <h1 className='mb-3 text-lg font-bold text-gray-700'>
+                {first?.title}
+              </h1>
+              <p className='text-base font-bold text-gray-600 '>
                 {first?.price &&
                   (
                     first?.price -
@@ -49,37 +41,62 @@ const ProductDetails = () => {
                   ).toLocaleString('en-US', {
                     style: 'currency',
                     currency: 'USD',
-                  })}{' '}
-                <span className='inline-block px-3 py-1 mr-2 text-sm font-semibold text-red-500 bg-yellow-100 rounded-full'>
+                  })}
+                <span className='inline-block px-2 py-1 ml-2 text-sm text-red-500 bg-yellow-100 rounded-full'>
                   {first?.discountPercentage}% OFF
                 </span>
               </p>
-            </div>
-            <div>
-              <p className='px-3 py-1 mr-2 text-sm font-semibold text-gray-700 rounded-full '>
-                Precio actual ${first?.price}
+              <p className='text-sm font-bold text-gray-300 line-through '>
+                {first?.price.toLocaleString('en-US', {
+                  style: 'currency',
+                  currency: 'USD',
+                })}
               </p>
-              <p className='px-3 py-1 text-sm font-semibold '>
-                Marca: {first?.brand}
-              </p>
-              <div className=''>
-                <span className='text-sm font-semibold '>
-                  Stock: {first?.stock}
-                </span>
+              <div className='mt-4'>
+                <div className=''>
+                  <span className='text-sm font-bold text-gray-500'>
+                    Stock: {first?.stock}
+                  </span>
+                </div>
+                <div className='relative'>
+                  <Rating
+                    rating={first?.rating || 0}
+                    positionX='left-20'
+                    positionY='bottom-0'
+                  />
+                </div>
+              </div>
+              <div>
+                <p className='mt-4 text-base font-bold text-gray-600'>
+                  Última valoración
+                </p>
+                <div className='flex items-center '>
+                  {'★'
+                    .repeat(Math.round(first?.rating as number))
+                    .padEnd(5, '☆')}
+                </div>
+              </div>
+              <div>
+                <p className='my-4 text-base font-bold text-left text-gray-600'>
+                  Descripción
+                </p>
+                <p className='text-base text-left text-gray-500'>
+                  {first?.description}
+                </p>
               </div>
             </div>
           </div>
 
           {/* Images */}
-          <div className='grid col-span-2 gap-4 justify-items-center '>
-            <div className='bg-white w-80 md:w-auto md:max-w-lg'>
+          <div className='grid col-span-2 gap-4 p-2 justify-items-center bg-slate-100 '>
+            <div className=' w-80 h-80 md:h-auto md:w-auto md:max-w-lg'>
               <img
                 className='object-contain mx-auto rounded-lg md:h-96 md:w-full'
                 src={imageThumbnail}
                 alt=''
               />
             </div>
-            <div className='px-2 overflow-x-auto md:overflow-hidden'>
+            <div className='px-2 mt-4 overflow-x-auto md:overflow-hidden'>
               <div className={`grid grid-cols-5 gap-4    whitespace-no-wrap`}>
                 {first?.images.map((image) => (
                   <div
@@ -99,6 +116,7 @@ const ProductDetails = () => {
           </div>
         </div>
       </section>
+      <SomeReviews category={first?.category as string} />
       <SomeProducts />
     </div>
   )

@@ -24,3 +24,11 @@ export interface Category {
   description: string
   name: string
 }
+
+export interface ProductReview {
+  name: string
+  comment: string
+  date: string
+  rating: number
+  category?: string
+}

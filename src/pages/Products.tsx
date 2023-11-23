@@ -7,9 +7,7 @@ const Products = () => {
   const [first, setfirst] = useState<ProductElement[] | []>([])
 
   const getProductById = async () => {
-    const { data } = await getProduct(
-      `${import.meta.env.VITE_API_URL}/products`,
-    )
+    const { data } = await getProduct(`/products`)
 
     setfirst(data.products)
   }

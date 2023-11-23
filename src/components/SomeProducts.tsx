@@ -7,9 +7,7 @@ const randoSkip = Math.floor(Math.random() * 95)
 const SomeProducts = () => {
   const [first, setfirst] = useState<ProductElement[] | null>(null)
   const getProductById = async () => {
-    const { data } = await getProduct(
-      `${import.meta.env.VITE_API_URL}/products?limit=8&skip=${randoSkip}`,
-    )
+    const { data } = await getProduct(`/products?limit=8&skip=${randoSkip}`)
     setfirst(data.products)
   }
   useEffect(() => {

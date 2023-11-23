@@ -19,7 +19,7 @@ const ProductCard: React.FC<ProductElement> = ({
             alt='Hotel Photo'
             className='object-contain w-full h-64 '
           />
-          <Rating rating={rating} />
+          <Rating rating={rating} positionX='right-2' positionY='bottom-1' />
         </div>
         <div className='p-2 mt-1'>
           <h2 className='text-slate-700'> {title}</h2>
