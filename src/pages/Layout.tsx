@@ -1,22 +1,19 @@
 import { Outlet, useNavigate } from 'react-router-dom'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
-import { useContext, useEffect } from 'react'
 import { AuthContext } from '../context/AuthContext'
+import { useEffect, useContext } from 'react'
 
 const Layout = () => {
-  const { getUser } = useContext(AuthContext)
-  const navigate = useNavigate()
+  const { supabase } = useContext(AuthContext)
+  const navitage = useNavigate()
   useEffect(() => {
-    async function getSession() {
-      const data = await getUser()
-      if (data?.data.user === null) {
-        navigate('/login')
+    supabase.auth.onAuthStateChange(async (_, session) => {
+      if (!session) {
+        navitage('/login')
       }
-    }
-    getSession()
-  }, [getUser, navigate])
-
+    })
+  }, [supabase, navitage])
   return (
     <div className='flex flex-col justify-between min-h-screen '>
       <Header />

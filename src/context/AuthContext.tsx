@@ -1,20 +1,13 @@
 import { createContext } from 'react'
-import {
-  createClient,
-  SupabaseClient,
-  AuthError,
-  UserResponse,
-} from '@supabase/supabase-js'
+import { createClient, SupabaseClient, AuthError } from '@supabase/supabase-js'
 
 interface IAuthContext {
   supabase: SupabaseClient
   singOut: () => Promise<AuthError | null> | null
-  getUser: () => Promise<UserResponse | null> | UserResponse | null
 }
 export const AuthContext = createContext<IAuthContext>({
   supabase: {} as SupabaseClient,
   singOut: () => null,
-  getUser: () => null,
 })
 
 const supabase = createClient(
@@ -27,16 +20,12 @@ export const AuthProvider = ({ children }: React.PropsWithChildren) => {
     const { error } = await supabase.auth.signOut()
     return error
   }
-  const getUser = async () => {
-    const data = await supabase.auth.getUser()
-    return data
-  }
+
   return (
     <AuthContext.Provider
       value={{
         singOut,
         supabase,
-        getUser,
       }}
     >
       {children}
