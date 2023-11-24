@@ -23,16 +23,17 @@ const Login = () => {
     })
   }, [navigate, supabase])
   return (
-    <div className='container flex flex-col items-center justify-center bg-gray-50'>
+    <div className='container flex flex-col items-center justify-center bg-gray-100'>
       <div className='max-w-screen-sm '>
         <Auth
           supabaseClient={supabase}
           appearance={{
             theme: ThemeSupa,
+
             className: {
-              container: 'w-full bg-gray-200 p-3 rounded-md',
+              container: 'w-full bg-blue-100 p-3 rounded-md',
               button:
-                'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded',
+                'bg-blue-700 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded',
               label: 'block text-gray-700 text-sm  mb-2',
             },
           }}

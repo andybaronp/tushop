@@ -14,7 +14,7 @@ const Header = () => {
     }
   }
   return (
-    <nav className='fixed top-0 left-0 z-20 w-full border-b border-gray-200 bg-white py-2.5 px-6 sm:px-4'>
+    <nav className='fixed top-0 left-0 z-20 w-full px-6 bg-white border-b border-gray-200 sm:px-4'>
       <div className='container flex flex-wrap items-center justify-between mx-auto max-w-7xl'>
         <Link to='/' className='flex items-center'>
           <svg

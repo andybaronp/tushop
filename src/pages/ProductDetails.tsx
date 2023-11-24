@@ -25,7 +25,9 @@ const ProductDetails = () => {
       ) : (
         <section className='flex flex-col w-full mb-8 '>
           <div className='p-2'>
-            <h1 className='text-lg md:text-3xl '> {data?.title}</h1>
+            <h1 className='text-lg md:text-3xl '>
+              {data?.title.toLocaleUpperCase()}
+            </h1>
           </div>
           <div className='grid grid-cols-1 gap-2 p-2 bg-gray-50 md:grid-cols-3'>
             {/* Details */}
@@ -44,7 +46,7 @@ const ProductDetails = () => {
                     {data?.discountPercentage}% OFF
                   </span>
                 </p>
-                <p className='text-sm font-bold text-gray-300 line-through '>
+                <p className='text-sm font-bold text-gray-400 line-through '>
                   {formatPrice(data?.price)}
                 </p>
                 <div className='mt-4'>
@@ -87,7 +89,9 @@ const ProductDetails = () => {
               <div className=' w-80 h-72 md:h-auto md:w-auto md:max-w-lg'>
                 <img
                   className='object-contain h-64 mx-auto rounded-lg md:h-96 md:w-full'
-                  src={imageThumbnail}
+                  src={
+                    imageThumbnail ? imageThumbnail : 'https://placehold.co/400'
+                  }
                   alt=''
                 />
               </div>
