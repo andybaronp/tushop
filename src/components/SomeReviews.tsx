@@ -1,4 +1,4 @@
-import { reviews } from '../apis/reviews_data_example'
+import { reviews } from '../utils/reviews_data_example'
 import CardReview from './CardReview'
 const SomeReviews = ({ category }: { category: string }) => {
   const reviewsLength = reviews.length
