@@ -11,8 +11,8 @@ export const AuthContext = createContext<IAuthContext>({
 })
 
 const supabase = createClient(
-  'https://ldyrhubczjlztyjtvwly.supabase.co',
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxkeXJodWJjempsenR5anR2d2x5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDA1ODIzNTcsImV4cCI6MjAxNjE1ODM1N30.vznLnrQm0I2Rq7-ZuiQd6_pml83vFPFid29jBrbq_gU',
+  import.meta.env.VITE_SUPABASE_URL,
+  import.meta.env.VITE_SUPABASE_ANON_KEY,
 )
 
 export const AuthProvider = ({ children }: React.PropsWithChildren) => {
