@@ -11,7 +11,9 @@ const ProductDetails = () => {
   const { id } = useParams()
   const [imageThumbnail, setImageThumbnail] = useState('')
 
-  const { data, loading, error } = useFetch<ProductElement>(`/products/${id}`)
+  const { data, loading, error } = useFetch<ProductElement>(
+    `https://dummyjson.com/products/${id}`,
+  )
 
   useEffect(() => {
     if (!loading && data) {
