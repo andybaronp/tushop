@@ -6,7 +6,11 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      '/products': 'https://dummyjson.com',
+      // Todas las rutas
+      '^/': {
+        target: 'https://dummyjson.com',
+        changeOrigin: true,
+      },
     },
   },
 })
