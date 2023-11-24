@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 const Main = () => {
   return (
     <main className='my-8'>
-      <div className='h-64 overflow-hidden bg-center bg-cover rounded-md bg-[url("https://i.dummyjson.com/data/products/4/4.jpg")]   '>
+      <div className='h-64 overflow-hidden bg-center bg-contain bg-no-repeat rounded-md bg-[url("https://i.dummyjson.com/data/products/3/thumbnail.jpg")]   '>
         <div className='flex items-center h-full transition duration-500 ease-in bg-opacity-50 bg-gray-950 hover:bg-opacity-20'>
           <div className='max-w-xl px-10 sm:text-left'>
             <h2 className='text-2xl font-semibold text-white'>Smartphones</h2>
