@@ -19,7 +19,7 @@ export const useFetch = <T,>(url: string, canFetch = false) => {
     setState({ data: null, loading: true, error: null })
     if (!canFetch) {
       axios
-        .get(`${base_url}${url}`)
+        .get(`https://dummyjson.com${url}`)
         .then((resp) => resp.data)
         .then((data) => {
           setState({
