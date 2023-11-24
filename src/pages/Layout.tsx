@@ -15,9 +15,9 @@ const Layout = () => {
     })
   }, [supabase, navitage])
   return (
-    <div className='flex flex-col justify-between min-h-screen '>
+    <div className='flex flex-col justify-between max-w-screen-lg min-h-screen mx-auto'>
       <Header />
-      <main className=''>
+      <main className='p-7'>
         <Outlet />
       </main>
       <Footer />
