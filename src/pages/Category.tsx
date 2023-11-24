@@ -7,7 +7,7 @@ import { useFetch } from '../hooks/useFetch'
 const Category = () => {
   const { id } = useParams()
   const { data, loading, error } = useFetch<Product>(
-    `https://dummyjson.com/products/category/${id} `,
+    `/products/category/${id} `,
   )
 
   return (

@@ -12,7 +12,7 @@ const Search: React.FC<Props> = ({ setIsSearch }) => {
   const debouncedSearch = useDebounce({ value: first, delay: 1000 })
   const { setDataFetch } = useContext(SearchContext)
   const { data, loading, error } = useFetch<Product>(
-    `https://dummyjson.com/products/search?q=${debouncedSearch}`,
+    `/products/search?q=${debouncedSearch}`,
     canFetch,
   )
 
