@@ -5,7 +5,7 @@ const Header = () => {
   const [showMenu, setShowMenu] = useState(false)
   return (
     <nav className='fixed top-0 left-0 z-20 w-full border-b border-gray-200 bg-white py-2.5 px-6 sm:px-4'>
-      <div className='container flex flex-wrap items-center justify-between max-w-6xl mx-auto'>
+      <div className='container flex flex-wrap items-center justify-between mx-auto max-w-7xl'>
         <Link to='/' className='flex items-center'>
           <svg
             width='24px'
@@ -34,12 +34,12 @@ const Header = () => {
         </Link>
 
         <div
-          className='mt-2 sm:mt-0 sm:flex md:order-2'
+          className='mt-2 sm:mt-0 sm:flex md:order-2 md:hidden'
           onClick={() => setShowMenu(!showMenu)}
         >
           <button
             type='button'
-            className='inline-flex items-center p-2 text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 md:hidden'
+            className='inline-flex items-center p-2 text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 '
             aria-controls='navbar-sticky'
             aria-expanded='false'
           >
@@ -59,8 +59,7 @@ const Header = () => {
             </svg>
           </button>
         </div>
-        <div className='hidden sm:mt-0 sm:flex md:order-2'>
-          {/* <!-- Login Button --> */}
+        <div className='hidden sm:mt-0 md:block md:order-2'>
           <button
             type='button'
             className='rounde mr-3  border border-blue-700 py-1.5 px-6 text-center text-sm font-medium text-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300 md:inline-block rounded-lg'

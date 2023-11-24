@@ -27,10 +27,10 @@ const ProductDetails = () => {
           <div className='p-2'>
             <h1 className='text-lg md:text-3xl '> {data?.title}</h1>
           </div>
-          <div className='grid items-center grid-cols-1 gap-2 p-2 bg-gray-50 md:grid-cols-1'>
+          <div className='grid grid-cols-1 gap-2 p-2 bg-gray-50 md:grid-cols-3'>
             {/* Details */}
-            <div className='flex flex-col items-center '>
-              <div className='flex flex-col items-start p-5 overflow-hidden rounded shadow-lg bg-slate-100'>
+            <div className='flex flex-col items-center order-3'>
+              <div className='flex flex-col items-start p-5 overflow-hidden rounded shadow-lg bg-slate-200'>
                 <h1 className='mb-3 text-lg font-bold text-gray-700'>
                   {data?.title}
                 </h1>
@@ -83,16 +83,18 @@ const ProductDetails = () => {
             </div>
 
             {/* Images */}
-            <div className='grid col-span-2 gap-4 p-2 justify-items-center bg-slate-100 '>
-              <div className=' w-80 h-80 md:h-auto md:w-auto md:max-w-lg'>
+            <div className='grid col-span-2 gap-4 p-2 justify-items-center '>
+              <div className=' w-80 h-72 md:h-auto md:w-auto md:max-w-lg'>
                 <img
-                  className='object-contain mx-auto rounded-lg md:h-96 md:w-full'
+                  className='object-contain h-64 mx-auto rounded-lg md:h-96 md:w-full'
                   src={imageThumbnail}
                   alt=''
                 />
               </div>
               <div className='px-2 mt-4 overflow-x-auto md:overflow-hidden'>
-                <div className={`grid grid-cols-5 gap-4    whitespace-no-wrap`}>
+                <div
+                  className={`grid md:grid-cols-5 gap-4  grid-cols-3   whitespace-no-wrap  `}
+                >
                   {data?.images.map((image: string) => (
                     <div
                       key={image}
@@ -100,7 +102,7 @@ const ProductDetails = () => {
                       className='px-2 pb-2 rounded-lg cursor-pointer'
                     >
                       <img
-                        className='object-cover w-32 h-32 '
+                        className='object-cover w-full h-32 sm:w-32 '
                         src={image}
                         alt={data?.title}
                       />

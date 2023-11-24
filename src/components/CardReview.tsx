@@ -2,10 +2,10 @@ import { ProductReview } from '../interfaces/product'
 
 const CardReview = ({ comment, date, name, rating }: ProductReview) => {
   return (
-    <article className='my-1 bg-white border border-gray-200 rounded'>
+    <article className='my-1 border border-gray-200 rounded bg-slate-100'>
       <div className='p-4'>
         <div className='flex justify-between'>
-          <p className='text-base font-bold text-left text-gray-600 '>{name}</p>
+          <p className='text-lg font-bold text-left text-gray-800 '>{name}</p>
           <p className='text-base font-bold text-left text-gray-600 '>{date}</p>
         </div>
         <div className='flex items-center '>

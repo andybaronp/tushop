@@ -4,8 +4,8 @@ const Main = () => {
   return (
     <main className='my-8'>
       <div className='h-64 overflow-hidden bg-center bg-cover rounded-md bg-[url("https://i.dummyjson.com/data/products/4/4.jpg")]   '>
-        <div className='flex items-center h-full transition bg-opacity-50 bg-gray-950 hover:bg-opacity-20'>
-          <div className='max-w-xl px-10'>
+        <div className='flex items-center h-full transition duration-500 ease-in bg-opacity-50 bg-gray-950 hover:bg-opacity-20'>
+          <div className='max-w-xl px-10 sm:text-left'>
             <h2 className='text-2xl font-semibold text-white'>Smartphones</h2>
             <p className='mt-2 text-gray-200'>
               ¡Descubre la tecnología que te conecta con el mundo! Explora
@@ -20,14 +20,14 @@ const Main = () => {
           </div>
         </div>
       </div>
-      <div className='gap-2 mt-8 md:flex md:justify-between '>
-        <div className='h-64 overflow-hidden  bg-center bg-cover rounded-md bg-[url("https://i.dummyjson.com/data/products/92/thumbnail.jpg")]'>
-          <div className='flex items-center h-full transition bg-opacity-50 bg-gray-950 hover:bg-opacity-20'>
-            <div className='max-w-xl px-10'>
+      <div className='gap-2 mt-4 md:flex md:justify-between '>
+        <div className='h-72 overflow-hidden  bg-center bg-cover   rounded-md bg-[url("https://i.dummyjson.com/data/products/92/thumbnail.jpg")]'>
+          <div className='flex items-center h-full transition duration-500 ease-in bg-opacity-50 bg-gray-950 hover:bg-opacity-20'>
+            <div className='max-w-xl px-10 sm:text-left'>
               <h2 className='text-2xl font-semibold text-white'>
                 Motocicletas
               </h2>
-              <p className='mt-2 text-gray-100'>
+              <p className='mt-2 text-gray-200'>
                 ¡Experimenta la libertad sobre dos ruedas! Descubre nuestra gama
                 de motocicletas, un universo de potencia, estilo y aventura.
               </p>
@@ -40,9 +40,9 @@ const Main = () => {
           </div>
         </div>
 
-        <div className='w-full h-64 mt-8 overflow-hidden bg-center bg-cover rounded-md md:mt-0 md:w-1/2 bg-[url("https://i.dummyjson.com/data/products/66/thumbnail.jpg")]'>
-          <div className='flex items-center h-full transition bg-opacity-50 bg-gray-950 hover:bg-opacity-20'>
-            <div className='max-w-xl px-10'>
+        <div className='w-full h-72 mt-8 overflow-hidden bg-center bg-cover  aspect-video	  rounded-md md:mt-0 md:w-1/2 bg-[url("https://i.dummyjson.com/data/products/66/thumbnail.jpg")]'>
+          <div className='flex items-center h-full transition duration-500 ease-in bg-opacity-50 bg-gray-950 hover:bg-opacity-20'>
+            <div className='max-w-xl px-10 sm:text-left'>
               <h2 className='text-2xl font-semibold text-white'>
                 Relojes Masculinos
               </h2>
