@@ -1,10 +1,20 @@
-import { Link } from 'react-router-dom'
-import { useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import { useState, useContext } from 'react'
+import { AuthContext } from '../context/AuthContext'
 
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false)
+  const { singOut } = useContext(AuthContext)
+  const navegate = useNavigate()
+  const handleSingOut = async () => {
+    const isOunt = await singOut()
+    setShowMenu(false)
+    if (!isOunt) {
+      navegate('/login')
+    }
+  }
   return (
-    <nav className='fixed top-0 left-0 z-20 w-full border-b border-gray-200 bg-white py-2.5 px-6 sm:px-4'>
+    <nav className='fixed top-0 left-0 z-20 w-full px-6 bg-white border-b border-gray-200 sm:px-4'>
       <div className='container flex flex-wrap items-center justify-between mx-auto max-w-7xl'>
         <Link to='/' className='flex items-center'>
           <svg
@@ -61,6 +71,7 @@ const Header = () => {
         </div>
         <div className='hidden sm:mt-0 md:block md:order-2'>
           <button
+            onClick={() => handleSingOut()}
             type='button'
             className='rounde mr-3  border border-blue-700 py-1.5 px-6 text-center text-sm font-medium text-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300 md:inline-block rounded-lg'
           >
@@ -111,6 +122,7 @@ const Header = () => {
             </li>
             <li className='md:hidden'>
               <button
+                onClick={() => handleSingOut()}
                 type='button'
                 className='rounde mr-3  border border-blue-700 py-1.5 px-6 text-center text-sm font-medium text-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300 md:inline-block rounded-lg'
               >

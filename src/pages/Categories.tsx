@@ -1,4 +1,4 @@
-import { categories } from '../apis/categories_data_example'
+import { categories } from '../utils/categories_data_example'
 import CategoryCard from '../components/CategoryCard'
 import { Category } from '../interfaces/product'
 

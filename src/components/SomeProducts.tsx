@@ -5,7 +5,7 @@ const randoSkip = Math.floor(Math.random() * 95)
 
 const SomeProducts = () => {
   const { data, loading, error } = useFetch<Product>(
-    `/products?limit=8&skip=${randoSkip}`,
+    `https://dummyjson.com/products?limit=8&skip=${randoSkip}`,
   )
   return (
     <section className='py-10 bg-gray-50'>

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 const Main = () => {
   return (
     <main className='my-8'>
-      <div className='h-64 overflow-hidden bg-center bg-contain bg-no-repeat rounded-md bg-[url("https://i.dummyjson.com/data/products/3/thumbnail.jpg")]   '>
+      <div className='h-64 overflow-hidden bg-center bg-cover bg-no-repeat rounded-md bg-[url("assets/images/phone.webp")]   '>
         <div className='flex items-center h-full transition duration-500 ease-in bg-opacity-50 bg-gray-950 hover:bg-opacity-20'>
           <div className='max-w-xl px-10 sm:text-left'>
             <h2 className='text-2xl font-semibold text-white'>Smartphones</h2>
@@ -21,7 +21,7 @@ const Main = () => {
         </div>
       </div>
       <div className='gap-2 mt-4 md:flex md:justify-between '>
-        <div className='h-72 overflow-hidden  bg-center bg-cover   rounded-md bg-[url("https://i.dummyjson.com/data/products/92/thumbnail.jpg")]'>
+        <div className='h-72 overflow-hidden  bg-center bg-cover   rounded-md bg-[url("assets/images/motorcycle.webp")]'>
           <div className='flex items-center h-full transition duration-500 ease-in bg-opacity-50 bg-gray-950 hover:bg-opacity-20'>
             <div className='max-w-xl px-10 sm:text-left'>
               <h2 className='text-2xl font-semibold text-white'>
@@ -40,7 +40,7 @@ const Main = () => {
           </div>
         </div>
 
-        <div className='w-full h-72 mt-8 overflow-hidden bg-center bg-cover  aspect-video	  rounded-md md:mt-0 md:w-1/2 bg-[url("https://i.dummyjson.com/data/products/66/thumbnail.jpg")]'>
+        <div className='w-full h-72 mt-8 overflow-hidden bg-center bg-cover  aspect-video	  rounded-md md:mt-0 md:w-1/2 bg-[url("assets/images/watch.webp")]'>
           <div className='flex items-center h-full transition duration-500 ease-in bg-opacity-50 bg-gray-950 hover:bg-opacity-20'>
             <div className='max-w-xl px-10 sm:text-left'>
               <h2 className='text-2xl font-semibold text-white'>
