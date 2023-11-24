@@ -10,6 +10,8 @@ export default defineConfig({
       '^/': {
         target: 'https://dummyjson.com',
         changeOrigin: true,
+        // Opcional: agrega un encabezado de redireccionamiento
+        rewrite: (path) => `https://dummyjson.com${path}`,
       },
     },
   },
