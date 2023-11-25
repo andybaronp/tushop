@@ -47,7 +47,7 @@ const Search: React.FC<Props> = ({ setIsSearch }) => {
   }
 
   return (
-    <div className='relative max-w-lg mx-auto mt-6'>
+    <div className='relative mx-auto mt-6'>
       <span className='absolute inset-y-0 left-0 flex items-center pl-3'>
         <svg className='w-5 h-5 text-gray-500' viewBox='0 0 24 24' fill='none'>
           <path
@@ -61,9 +61,9 @@ const Search: React.FC<Props> = ({ setIsSearch }) => {
       </span>
 
       <input
-        className='w-full py-2 pl-10 pr-10 border rounded-md focus:border-blue-500 focus:outline-none focus:shadow-outline'
+        className='w-full py-2 pl-10 pr-10 border border-gray-400 rounded-md focus:border-blue-500 focus:outline-none focus:shadow-outline'
         type='text'
-        placeholder='Search'
+        placeholder='¿Qué estás buscando?'
         value={first}
         onChange={handleChange}
       />
