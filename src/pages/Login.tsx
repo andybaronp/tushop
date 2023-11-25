@@ -30,7 +30,7 @@ const Login = () => {
           <Logo />
         </div>
       </div>
-      <div className='flex items-center justify-center w-full bg-gray-100 lg:w-1/2'>
+      <div className='flex items-center justify-center w-full bg-gray-200 lg:w-1/2'>
         <div className='w-full max-w-md p-6'>
           <Auth
             supabaseClient={supabase}
@@ -55,7 +55,7 @@ const Login = () => {
               },
             }}
             theme='light'
-            providers={['github']}
+            providers={undefined}
             localization={{
               variables: {
                 sign_in: {
