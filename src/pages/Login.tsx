@@ -55,7 +55,8 @@ const Login = () => {
               },
             }}
             theme='light'
-            providers={undefined}
+            socialLayout='horizontal'
+            providers={false}
             localization={{
               variables: {
                 sign_in: {

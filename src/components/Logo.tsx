@@ -2,7 +2,6 @@ const Logo = ({ width, height }: { width?: string; height?: string }) => {
   return (
     <svg
       version='1.0'
-      xmlns='http://www.w3.org/2000/svg'
       width={width ? width : '524.67004'}
       height={height ? height : '531.39694'}
       viewBox='0 0 1024.000000 1024.000000'
