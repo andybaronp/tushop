@@ -1,15 +1,7 @@
-const Rating = ({
-  rating = 0,
-  positionX,
-  positionY,
-}: {
-  rating: number
-  positionX: string
-  positionY: string
-}) => {
+const Rating = ({ rating = 0 }: { rating: number }) => {
   return (
     <div
-      className={`absolute inline-flex items-center px-2 py-1 bg-white rounded-lg shadow-md ${positionX} ${positionY}`}
+      className={` inline-flex items-center px-2 py-1 bg-white rounded-lg shadow-md  `}
     >
       <svg
         xmlns='http://www.w3.org/2000/svg'

@@ -8,12 +8,12 @@ const SomeProducts = () => {
     `/products?limit=8&skip=${randoSkip}`,
   )
   return (
-    <section className='py-10 bg-gray-50'>
+    <section className='py-10 '>
       <div className='mt-16'>
-        <h3 className='mb-3 text-3xl font-medium text-gray-800'>
+        <h3 className='mb-3 text-2xl font-medium text-center text-gray-800'>
           También te puede interesar
         </h3>
-        <div className='grid max-w-6xl grid-cols-1 gap-6 p-6 mx-auto sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
+        <div className='grid max-w-6xl grid-cols-1 gap-4 p-6 mx-auto sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
           {error ? (
             <p>{error}</p>
           ) : loading ? (

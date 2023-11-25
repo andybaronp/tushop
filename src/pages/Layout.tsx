@@ -17,7 +17,7 @@ const Layout = () => {
   return (
     <div className='flex flex-col justify-between max-w-screen-lg min-h-screen mx-auto'>
       <Header />
-      <main className='p-7'>
+      <main className='p-6'>
         <Outlet />
       </main>
       <Footer />
