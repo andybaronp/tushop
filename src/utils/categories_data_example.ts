@@ -1,17 +1,15 @@
 export const categories = [
   {
-    'category': 'smartphones',
-    'name': 'Teléfonos inteligentes',
-    'description':
-      'Dispositivos móviles de última generación para estar siempre conectado.',
-    'thumbnail': 'https://i.dummyjson.com/data/products/4/thumbnail.jpg',
+    'category': 'mens-watches',
+    'name': 'Relojes de hombre',
+    'description': 'Accesorios funcionales y sofisticados para hombres.',
+    'thumbnail': 'https://i.dummyjson.com/data/products/64/thumbnail.jpg',
   },
   {
-    'category': 'laptops',
-    'thumbnail': 'https://i.dummyjson.com/data/products/6/thumbnail.png',
-    'name': 'Laptops',
-    'description':
-      'Potentes computadoras portátiles para trabajar o entretenerte donde quieras.',
+    'category': 'womens-watches',
+    'name': 'Relojes de mujer',
+    'description': 'Piezas elegantes que realzan la belleza femenina.',
+    'thumbnail': 'https://i.dummyjson.com/data/products/67/thumbnail.jpg',
   },
   {
     'category': 'fragrances',
@@ -32,23 +30,19 @@ export const categories = [
     'thumbnail': 'https://i.dummyjson.com/data/products/25/thumbnail.jpg',
   },
   {
-    'category': 'home-decoration',
-    'name': 'Decoración del hogar',
-    'description': 'Elementos para embellecer y dar personalidad a tu casa.',
-    'thumbnail': 'https://i.dummyjson.com/data/products/28/thumbnail.jpg',
+    'category': 'tops',
+    'name': 'Partes superiores',
+    'description': 'Prendas de vestir para la parte superior del cuerpo.',
+    'thumbnail': 'https://i.dummyjson.com/data/products/33/thumbnail.jpg',
   },
+
   {
     'category': 'furniture',
     'name': 'Muebles',
     'description': 'Piezas que transforman tus espacios en hogares acogedores.',
     'thumbnail': 'https://i.dummyjson.com/data/products/31/thumbnail.jpg',
   },
-  {
-    'category': 'tops',
-    'name': 'Partes superiores',
-    'description': 'Prendas de vestir para la parte superior del cuerpo.',
-    'thumbnail': 'https://i.dummyjson.com/data/products/33/thumbnail.jpg',
-  },
+
   {
     'category': 'womens-dresses',
     'name': 'Vestidos de mujer',
@@ -67,24 +61,14 @@ export const categories = [
     'description': 'Prendas masculinas para lucir con estilo.',
     'thumbnail': 'https://i.dummyjson.com/data/products/55/thumbnail.jpg',
   },
+
   {
     'category': 'mens-shoes',
     'name': 'Zapatos de hombre',
     'description': 'Calzado masculino para cualquier momento.',
     'thumbnail': 'https://i.dummyjson.com/data/products/59/thumbnail.jpg',
   },
-  {
-    'category': 'mens-watches',
-    'name': 'Relojes de hombre',
-    'description': 'Accesorios funcionales y sofisticados para hombres.',
-    'thumbnail': 'https://i.dummyjson.com/data/products/64/thumbnail.jpg',
-  },
-  {
-    'category': 'womens-watches',
-    'name': 'Relojes de mujer',
-    'description': 'Piezas elegantes que realzan la belleza femenina.',
-    'thumbnail': 'https://i.dummyjson.com/data/products/67/thumbnail.jpg',
-  },
+
   {
     'category': 'womens-bags',
     'name': 'Bolsos de mujer',
@@ -96,6 +80,12 @@ export const categories = [
     'name': 'Joyería de mujer',
     'description': 'Acentos brillantes que realzan tu estilo personal.',
     'thumbnail': 'https://i.dummyjson.com/data/products/79/thumbnail.jpg',
+  },
+  {
+    'category': 'home-decoration',
+    'name': 'Decoración del hogar',
+    'description': 'Elementos para embellecer y dar personalidad a tu casa.',
+    'thumbnail': 'https://i.dummyjson.com/data/products/28/thumbnail.jpg',
   },
   {
     'category': 'sunglasses',
@@ -120,5 +110,19 @@ export const categories = [
     'name': 'Iluminación',
     'description': 'Elementos para dar luz y atmósfera a tus espacios.',
     'thumbnail': 'https://i.dummyjson.com/data/products/98/thumbnail.jpg',
+  },
+  {
+    'category': 'smartphones',
+    'name': 'Teléfonos inteligentes',
+    'description':
+      'Dispositivos móviles de última generación para estar siempre conectado.',
+    'thumbnail': 'https://i.dummyjson.com/data/products/4/thumbnail.jpg',
+  },
+  {
+    'category': 'laptops',
+    'thumbnail': 'https://i.dummyjson.com/data/products/6/thumbnail.png',
+    'name': 'Laptops',
+    'description':
+      'Potentes computadoras portátiles para trabajar o entretenerte donde quieras.',
   },
 ]

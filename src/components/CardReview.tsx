@@ -8,7 +8,7 @@ const CardReview = ({ comment, date, name, rating }: ProductReview) => {
           <p className='text-lg font-bold text-left text-gray-800 '>{name}</p>
           <p className='text-base font-bold text-left text-gray-600 '>{date}</p>
         </div>
-        <div className='flex items-center '>
+        <div className='flex items-center text-yellow-400'>
           {'★'.repeat(Math.round(rating)).padEnd(5, '☆')}
         </div>
       </div>
