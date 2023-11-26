@@ -24,7 +24,12 @@ export const SearchContext = createContext<ContextProps>({
   },
   setDataFetch: () => {},
 })
-
+/**
+ * Initializes the SearchProvider component.
+ *
+ * @param {Props} children - The children components.
+ * @return {JSX.Element} The rendered component.
+ */
 export const SearchProvider = ({ children }: Props) => {
   const [dataFetch, setDataFetch] = useState<FetchState>({
     data: null,

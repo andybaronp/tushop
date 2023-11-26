@@ -11,9 +11,9 @@ Tienda virtual de test
 5. React router dom
 6. https://dummyjson.com como Backend para data de prueba
 
-<img src="https://i.imgur.com/ewoYqs3.png" alt="Image example" width="320" height="320"> 
-<img src="https://i.imgur.com/N81kzD2.png" alt="Image example" width="320" height="320"> 
-<img src="https://i.imgur.com/OTrthI1.png" alt="Image example" width="320" height="320">
+<img src="https://i.imgur.com/ewoYqs3.png" alt="Image example" width="420" height="380"> 
+<img src="https://i.imgur.com/N81kzD2.png" alt="Image example" width="420" height="380"> 
+<img src="https://i.imgur.com/OTrthI1.png" alt="Image example" width="420" height="380">
 
 ## 🔥 Features
 
