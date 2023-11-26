@@ -4,8 +4,8 @@ import { Category } from '../interfaces/product'
 
 const Categories = () => {
   return (
-    <div className='p-2 mb-3 mt-14 bg-gray-50'>
-      <div className='flex flex-wrap justify-center gap-6'>
+    <div className='mb-3 mt-14'>
+      <div className='flex flex-wrap justify-center max-w-6xl gap-8 lg:justify-start'>
         {categories.map(
           ({ category, name, description, thumbnail }: Category, index) => (
             <CategoryCard

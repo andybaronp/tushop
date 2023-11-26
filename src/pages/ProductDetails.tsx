@@ -9,7 +9,7 @@ import Carousel from '../components/Carousel'
 const ProductDetails = () => {
   const { id } = useParams()
 
-  const { data, loading, error } = useFetch<ProductElement>(`/products/${id}`)
+  const { data, error, loading } = useFetch<ProductElement>(`/products/${id}`)
 
   return (
     <div className='mt-4 mb-2 pt-7 md:py-12'>
@@ -58,7 +58,7 @@ const ProductDetails = () => {
                   <p className='mt-4 text-base font-bold text-gray-600'>
                     Última valoración
                   </p>
-                  <div className='flex items-center '>
+                  <div className='flex items-center text-yellow-400'>
                     {'★'
                       .repeat(Math.round(data?.rating as number))
                       .padEnd(5, '☆')}
@@ -78,7 +78,7 @@ const ProductDetails = () => {
         </section>
       )}
       <SomeProducts />
-      <SomeReviews category={data?.category as string} />
+      {!loading && <SomeReviews />}
     </div>
   )
 }

@@ -1,6 +1,6 @@
 import { reviews } from '../utils/reviews_data_example'
 import CardReview from './CardReview'
-const SomeReviews = ({ category }: { category: string }) => {
+const SomeReviews = () => {
   const reviewsLength = reviews.length
   const reviewsRandom = Math.floor(Math.random() * reviewsLength)
 
@@ -12,8 +12,6 @@ const SomeReviews = ({ category }: { category: string }) => {
         </h3>
         <div className='p-2'>
           {reviews
-
-            .filter((prod) => prod.category === category)
             .slice(0, 5 + reviewsRandom)
             .map(({ comment, date, name, rating }, index) => {
               return (
