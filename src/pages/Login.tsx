@@ -56,7 +56,7 @@ const Login = () => {
             }}
             theme='light'
             socialLayout='horizontal'
-            providers={false}
+            providers={false as any} // eslint-disable-line
             localization={{
               variables: {
                 sign_in: {
