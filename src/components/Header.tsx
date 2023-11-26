@@ -81,14 +81,6 @@ const Header = () => {
                 Categorias
               </Link>
             </li>
-            <li>
-              <Link
-                to='/favorites'
-                className='block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-blue-700'
-              >
-                Favoritos
-              </Link>
-            </li>
           </ul>
         </div>
         {/* Salir */}
