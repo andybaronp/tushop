@@ -53,7 +53,7 @@ const Header = () => {
           } w-full   md:flex md:w-auto`}
         >
           <ul
-            className='flex flex-col p-4 mt-4 bg-gray-100 border border-gray-100 rounded-lg md:mt-0 md:flex-row md:space-x-8 md:border-0 md:bg-white md:text-sm '
+            className='flex flex-col p-4 mt-4 bg-gray-100 border border-gray-100 rounded-lg md:mt-0 md:flex-row md:space-x-8 md:border-0 md:bg-white '
             onClick={() => setShowMenu(false)}
           >
             <li>
