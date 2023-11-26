@@ -1,4 +1,4 @@
-import { Link, useNavigate } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import { useState, useContext } from 'react'
 import { AuthContext } from '../context/AuthContext'
 import Logo from './Logo'
@@ -14,6 +14,7 @@ const Header = () => {
       navegate('/login')
     }
   }
+
   return (
     <nav className='fixed top-0 left-0 z-20 w-full px-6 bg-white border-b border-gray-200 sm:px-4'>
       <div className='container flex flex-wrap items-center justify-between max-w-5xl mx-auto sm:px-3'>
@@ -44,48 +45,57 @@ const Header = () => {
             </svg>
           </button>
         </div>
-        <Link to='/' className='flex items-center '>
-          <Logo width='78px' height='64px' />
-        </Link>
+        <NavLink to='/' className='flex items-center '>
+          <Logo width='78px' height='68px' />
+        </NavLink>
         <div
           className={`items-center justify-between ${
             !showMenu ? 'hidden' : ''
-          } w-full   md:flex md:w-auto`}
+          }  w-full z-10 absolute top-10 left-0   md:flex md:w-auto md:static`}
         >
           <ul
             className='flex flex-col p-4 mt-4 bg-gray-100 border border-gray-100 rounded-lg md:mt-0 md:flex-row md:space-x-8 md:border-0 md:bg-white '
             onClick={() => setShowMenu(false)}
           >
             <li>
-              <Link
+              <NavLink
                 to='/'
-                className='block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:p-0 md:text-blue-700'
+                className={({ isActive }) =>
+                  'block py-2 pl-3 pr-4  rounded hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-blue-700' +
+                  (isActive ? ' text-blue-700' : 'text-gray-700')
+                }
                 aria-current='page'
               >
                 Inicio
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link
+              <NavLink
                 to='/products'
-                className='block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-blue-700'
+                className={({ isActive }) =>
+                  'block py-2 pl-3 pr-4  rounded hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-blue-700' +
+                  (isActive ? ' text-blue-700' : 'text-gray-700')
+                }
               >
                 Todos los productos
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link
+              <NavLink
                 to='/categories'
-                className='block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-blue-700'
+                className={({ isActive }) =>
+                  'block py-2 pl-3 pr-4  rounded hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-blue-700' +
+                  (isActive ? ' text-blue-700' : 'text-gray-700')
+                }
               >
                 Categorias
-              </Link>
+              </NavLink>
             </li>
           </ul>
         </div>
         {/* Salir */}
         <div
-          className='cursor-pointer sm:mt-0 md:block md:order-2'
+          className='order-2 ml-4 cursor-pointer sm:mt-0 md:block md:order-2'
           onClick={() => handleSingOut()}
         >
           <svg
@@ -97,8 +107,8 @@ const Header = () => {
           >
             <defs>
               <image
-                width='38'
-                height='38'
+                width='32'
+                height='32'
                 id='img1'
                 href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAAAAXNSR0IB2cksfwAAAEtQTFRFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA5mA6dAAAABl0Uk5Tyv/OAQAImb4VvdMW0tcZ2BrU0NYCGMSuzGmjUDEAAACaSURBVHic7dbZCoAgEAXQpqxM2xfr/780KoowSW9PGd1H4YA64xIEdJswYnosgig2kevgkfgnXyHG+E6SlKMkIyFBwnMqSoycjfPyudiN+45JQVWJkdXUGGGyWQ1Uys1oJGptl1QnNdKHMHkwMQeBbvJSGKiUBVZKvGHwtlzEwCCi8CM2Kvggn+Mpee1j8RMjgT9Xlotrun7hZvjaJibLwPmvAAAAAElFTkSuQmCC'
               />

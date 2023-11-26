@@ -21,12 +21,10 @@ const ProductCard: React.FC<ProductElement> = ({
             className='object-contain w-full h-64 '
           />
         </div>
-        <div className='flex flex-col justify-between p-2 mt-1 h-52 '>
+        <div className='flex flex-col justify-around h-48 p-2 '>
           <h2 className='text-lg font-semibold text-slate-900'> {title}</h2>
-          <p className='mt-1 text-sm text-slate-400'>
-            {description.slice(0, 50)}
-          </p>
-          <div className='flex items-end justify-between mt-3'>
+          <p className='text-sm text-slate-400'>{description.slice(0, 50)}</p>
+          <div className='flex items-end justify-between '>
             <p className='text-lg font-semibold '>{formatPrice(price)}</p>
             <Rating rating={rating} />
           </div>

@@ -5,6 +5,7 @@ import { useFetch } from '../hooks/useFetch'
 import { ProductElement } from '../interfaces/product'
 import { formatPrice } from '../utils/helpers'
 import Carousel from '../components/Carousel'
+import Rating from '../components/Rating'
 
 const ProductDetails = () => {
   const { id } = useParams()
@@ -27,10 +28,12 @@ const ProductDetails = () => {
             {/* Details */}
             <div className='flex flex-col items-center sm:max-w-sm'>
               <div className='flex flex-col items-start p-5 overflow-hidden rounded shadow-lg bg-slate-100'>
-                <h1 className='mb-3 text-2xl font-bold text-gray-700'>
+                <h1 className='mb-2 text-2xl font-bold text-gray-700'>
                   {data?.title}
                 </h1>
-                <div className='flex items-center gap-2'>
+                <Rating rating={data?.rating as number} />
+
+                <div className='flex items-center gap-2 mt-2'>
                   <p className='text-lg font-bold text-gray-700 '>
                     {formatPrice(
                       data?.price &&
@@ -47,25 +50,16 @@ const ProductDetails = () => {
                     </span>
                   </p>
                 </div>
-                <div className='flex w-full gap-4 mt-4 '>
+                <div className='flex w-full gap-4 mt-2 '>
                   <div className=''>
                     <span className='text-sm font-bold text-gray-500'>
                       Stock: {data?.stock}
                     </span>
                   </div>
                 </div>
+
                 <div>
-                  <p className='mt-4 text-base font-bold text-gray-600'>
-                    Última valoración
-                  </p>
-                  <div className='flex items-center text-yellow-400'>
-                    {'★'
-                      .repeat(Math.round(data?.rating as number))
-                      .padEnd(5, '☆')}
-                  </div>
-                </div>
-                <div>
-                  <p className='my-4 text-base font-bold text-left text-gray-600'>
+                  <p className='my-2 text-base font-bold text-left text-gray-600'>
                     Descripción
                   </p>
                   <p className='text-base text-left text-gray-500'>
