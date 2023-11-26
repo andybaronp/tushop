@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  tushop:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '8080:8080'
+    environment:
+      - VITE_SUPABASE_URL=${VITE_SUPABASE_URL}
+      - VITE_SUPABASE_ANON_KEY=${VITE_SUPABASE_ANON_KEY}
+    env_file:
+      - .env

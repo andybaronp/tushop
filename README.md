@@ -37,3 +37,11 @@ Clone este repositorio en tu máquina local usando Git
  `npm run dev` Iniciar servidor local `localhost:5173` `Agregar archivo .env` con las variables (ver .env.example)
 
 Para trabajar el login es necesario crear un proyecto en https://supabase.com/ e iniciar la autentificación para tener las keys. Ver la documentación 👉 https://supabase.com/docs/guides/auth
+
+## 🐳 Docker
+
+Para correr la app en un contenedor
+
+`docker compose up`
+
+Recuerda agregar las variables de entorno (ver .env.examplee)
