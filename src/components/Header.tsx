@@ -17,12 +17,9 @@ const Header = () => {
   return (
     <nav className='fixed top-0 left-0 z-20 w-full px-6 bg-white border-b border-gray-200 sm:px-4'>
       <div className='container flex flex-wrap items-center justify-between max-w-5xl mx-auto sm:px-3'>
-        <Link to='/' className='flex items-center'>
-          <Logo width='78px' height='64px' />
-        </Link>
-
+        {/* Menu */}
         <div
-          className='mt-2 sm:mt-0 sm:flex md:order-2 md:hidden'
+          className='mt-2 sm:mt-0 sm:flex md:order-1 md:hidden'
           onClick={() => setShowMenu(!showMenu)}
         >
           <button
@@ -47,33 +44,13 @@ const Header = () => {
             </svg>
           </button>
         </div>
-        <div
-          className='hidden cursor-pointer sm:mt-0 md:block md:order-2'
-          onClick={() => handleSingOut()}
-        >
-          <svg
-            version='1.2'
-            xmlns='http://www.w3.org/2000/svg'
-            viewBox='0 0 50 50'
-            width='30'
-            height='30'
-          >
-            <defs>
-              <image
-                width='38'
-                height='38'
-                id='img1'
-                href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAAAAXNSR0IB2cksfwAAAEtQTFRFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA5mA6dAAAABl0Uk5Tyv/OAQAImb4VvdMW0tcZ2BrU0NYCGMSuzGmjUDEAAACaSURBVHic7dbZCoAgEAXQpqxM2xfr/780KoowSW9PGd1H4YA64xIEdJswYnosgig2kevgkfgnXyHG+E6SlKMkIyFBwnMqSoycjfPyudiN+45JQVWJkdXUGGGyWQ1Uys1oJGptl1QnNdKHMHkwMQeBbvJSGKiUBVZKvGHwtlzEwCCi8CM2Kvggn+Mpee1j8RMjgT9Xlotrun7hZvjaJibLwPmvAAAAAElFTkSuQmCC'
-              />
-            </defs>
-            <style></style>
-            <use id='Background' href='#img1' x='0' y='0' />
-          </svg>
-        </div>
+        <Link to='/' className='flex items-center '>
+          <Logo width='78px' height='64px' />
+        </Link>
         <div
           className={`items-center justify-between ${
             !showMenu ? 'hidden' : ''
-          } w-full md:order-1 md:flex md:w-auto`}
+          } w-full   md:flex md:w-auto`}
         >
           <ul
             className='flex flex-col p-4 mt-4 bg-gray-100 border border-gray-100 rounded-lg md:mt-0 md:flex-row md:space-x-8 md:border-0 md:bg-white md:text-sm '
@@ -112,32 +89,31 @@ const Header = () => {
                 Favoritos
               </Link>
             </li>
-            <li className='md:hidden'>
-              <div
-                className='pt-2 pl-3 pr-4 cursor-pointer'
-                onClick={() => handleSingOut()}
-              >
-                <svg
-                  version='1.2'
-                  xmlns='http://www.w3.org/2000/svg'
-                  viewBox='0 0 50 50'
-                  width='30'
-                  height='30'
-                >
-                  <defs>
-                    <image
-                      width='38'
-                      height='38'
-                      id='img1'
-                      href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAAAAXNSR0IB2cksfwAAAEtQTFRFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA5mA6dAAAABl0Uk5Tyv/OAQAImb4VvdMW0tcZ2BrU0NYCGMSuzGmjUDEAAACaSURBVHic7dbZCoAgEAXQpqxM2xfr/780KoowSW9PGd1H4YA64xIEdJswYnosgig2kevgkfgnXyHG+E6SlKMkIyFBwnMqSoycjfPyudiN+45JQVWJkdXUGGGyWQ1Uys1oJGptl1QnNdKHMHkwMQeBbvJSGKiUBVZKvGHwtlzEwCCi8CM2Kvggn+Mpee1j8RMjgT9Xlotrun7hZvjaJibLwPmvAAAAAElFTkSuQmCC'
-                    />
-                  </defs>
-                  <style></style>
-                  <use id='Background' href='#img1' x='0' y='0' />
-                </svg>
-              </div>
-            </li>
           </ul>
+        </div>
+        {/* Salir */}
+        <div
+          className='cursor-pointer sm:mt-0 md:block md:order-2'
+          onClick={() => handleSingOut()}
+        >
+          <svg
+            version='1.2'
+            xmlns='http://www.w3.org/2000/svg'
+            viewBox='0 0 50 50'
+            width='30'
+            height='30'
+          >
+            <defs>
+              <image
+                width='38'
+                height='38'
+                id='img1'
+                href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAAAAXNSR0IB2cksfwAAAEtQTFRFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA5mA6dAAAABl0Uk5Tyv/OAQAImb4VvdMW0tcZ2BrU0NYCGMSuzGmjUDEAAACaSURBVHic7dbZCoAgEAXQpqxM2xfr/780KoowSW9PGd1H4YA64xIEdJswYnosgig2kevgkfgnXyHG+E6SlKMkIyFBwnMqSoycjfPyudiN+45JQVWJkdXUGGGyWQ1Uys1oJGptl1QnNdKHMHkwMQeBbvJSGKiUBVZKvGHwtlzEwCCi8CM2Kvggn+Mpee1j8RMjgT9Xlotrun7hZvjaJibLwPmvAAAAAElFTkSuQmCC'
+              />
+            </defs>
+            <style></style>
+            <use id='Background' href='#img1' x='0' y='0' />
+          </svg>
         </div>
       </div>
     </nav>
