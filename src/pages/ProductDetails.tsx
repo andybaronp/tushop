@@ -6,12 +6,15 @@ import { ProductElement } from '../interfaces/product'
 import { formatPrice } from '../utils/helpers'
 import Carousel from '../components/Carousel'
 import Rating from '../components/Rating'
+import { useEffect } from 'react'
 
 const ProductDetails = () => {
   const { id } = useParams()
 
   const { data, error, loading } = useFetch<ProductElement>(`/products/${id}`)
-
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }, [id])
   return (
     <div className='mt-4 mb-2 pt-7 md:py-12'>
       {error ? (
