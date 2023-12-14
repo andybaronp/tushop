@@ -32,6 +32,10 @@ const Login = () => {
       </div>
       <div className='flex items-center justify-center w-full bg-gray-200 lg:w-1/2'>
         <div className='w-full max-w-md p-6'>
+          <div className='text-center text-gray-400'>
+            <p>Puedes registrarte o usar el usuario</p>
+            <p>correo@corre.com 123456</p>
+          </div>
           <Auth
             supabaseClient={supabase}
             appearance={{
